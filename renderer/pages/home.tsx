@@ -1,35 +1,103 @@
-import React from 'react'
-import Head from 'next/head'
-import Link from 'next/link'
-import Image from 'next/image'
+import React from "react";
+import Head from "next/head";
+import {
+    Link,
+    Snippet,
+    Code,
+    button as buttonStyles,
+    Image,
+    Button
+} from "@nextui-org/react";
+import DefaultLayout from "@/layouts/default";
+import { siteConfig } from "@/config/site";
 
 export default function HomePage() {
-  return (
-    <React.Fragment>
-      <Head>
-        <title>Home - Nextron (with-tailwindcss)</title>
-      </Head>
-      <div className="grid grid-col-1 text-2xl w-full text-center">
-        <div>
-          <Image
-            className="ml-auto mr-auto"
-            src="/images/logo.png"
-            alt="Logo image"
-            width={256}
-            height={256}
-          />
-        </div>
-        <span>⚡ Electron ⚡</span>
-        <span>+</span>
-        <span>Next.js</span>
-        <span>+</span>
-        <span>tailwindcss</span>
-        <span>=</span>
-        <span>💕 </span>
-      </div>
-      <div className="mt-1 w-full flex-wrap flex justify-center">
-        <Link href="/next">Go to next page</Link>
-      </div>
-    </React.Fragment>
-  )
+    return (
+        <DefaultLayout>
+            <Head>
+                <title>Home - Nextron (with-next-ui)</title>
+            </Head>
+
+            <section className="flex flex-col items-center justify-center gap-4">
+                <Image
+                    width={240}
+                    src="/images/logo.png"
+                    alt="NextUI Album Cover"
+                />
+
+                <div className="flex gap-3">
+                    <Link
+                        isExternal
+                        className={buttonStyles({
+                            color: "primary",
+                            radius: "full",
+                            variant: "shadow"
+                        })}
+                        href={siteConfig.links.electron}
+                    >
+                        ⚡ Electron ⚡
+                    </Link>
+
+                    <Link
+                        isExternal
+                        className={buttonStyles({
+                            color: "secondary",
+                            radius: "full",
+                            variant: "shadow"
+                        })}
+                        href={siteConfig.links.nextjs}
+                    >
+                        NextJS
+                    </Link>
+
+                    <Link
+                        isExternal
+                        className={buttonStyles({
+                            color: "success",
+                            radius: "full",
+                            variant: "shadow"
+                        })}
+                        href={siteConfig.links.tailwindcss}
+                    >
+                        Tailwind CSS
+                    </Link>
+
+                    <Link
+                        isExternal
+                        className={buttonStyles({
+                            color: "warning",
+                            radius: "full",
+                            variant: "shadow"
+                        })}
+                        href={siteConfig.links.nextui}
+                    >
+                        NextUI
+                    </Link>
+
+                    <Link
+                        isExternal
+                        className={buttonStyles({
+                            color: "danger",
+                            radius: "full",
+                            variant: "shadow"
+                        })}
+                        href={siteConfig.links.typescript}
+                    >
+                        Typescript
+                    </Link>
+                </div>
+
+                <div className="mt-8">
+                    <Button
+                        as={Link}
+                        href="/about"
+                        radius="full"
+                        className="bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg"
+                    >
+                        Go To About Page
+                    </Button>
+                </div>
+            </section>
+        </DefaultLayout>
+    );
 }
