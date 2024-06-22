@@ -11,5 +11,3 @@ next-env.d.ts
 # build
 /app
 dist
-
-/.vscode
