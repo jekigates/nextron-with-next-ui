@@ -1,13 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import {
-    Link,
-    Snippet,
-    Code,
-    button as buttonStyles,
-    Image,
-    Button
-} from "@nextui-org/react";
+import { Link, button as buttonStyles, Image, Button } from "@nextui-org/react";
 import DefaultLayout from "@/layouts/default";
 import { siteConfig } from "@/config/site";
 
